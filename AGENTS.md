@@ -11,37 +11,37 @@ This is a Progressive Web App (PWA) color sorting puzzle game built with React, 
 
 ### Start development server
 ```bash
-npm start
+pnpm start
 ```
 Runs on http://localhost:3000 with hot reload enabled.
 
 ### Build for production
 ```bash
-npm run build
+pnpm run build
 ```
 Creates optimized production build in `build/` directory.
 
 ### Deploy to GitHub Pages
 ```bash
-npm run deploy
+pnpm run deploy
 ```
 Builds and deploys to GitHub Pages (gh-pages branch). Updates live site in ~1 minute.
 
 ### Run unit & component tests
 ```bash
-npm test
+pnpm test
 ```
 Launches Jest test runner in interactive watch mode.
 
 ### Run Playwright E2E tests
 ```bash
-npm run test:e2e
+pnpm run test:e2e
 ```
 Runs end-to-end tests across desktop and mobile Chrome viewports against the production build.
 
 ### Test production build locally
 ```bash
-npm run build
+pnpm run build
 node scripts/serve-test.js
 ```
 
