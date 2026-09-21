@@ -5,7 +5,7 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 ## Project Overview
 This is a Progressive Web App (PWA) color sorting puzzle game built with React, TypeScript, and Create React App. The game features multiple difficulty levels, colorblind accessibility mode, animations, and Web Audio API-generated sound effects.
 
-**Live deployment:** https://izep.github.io/color-sort
+**Live deployment:** https://izep.github.io/z-color-sort
 
 ## Development Commands
 
@@ -27,17 +27,24 @@ npm run deploy
 ```
 Builds and deploys to GitHub Pages (gh-pages branch). Updates live site in ~1 minute.
 
-### Run tests
+### Run unit & component tests
 ```bash
 npm test
 ```
 Launches Jest test runner in interactive watch mode.
 
+### Run Playwright E2E tests
+```bash
+npm run test:e2e
+```
+Runs end-to-end tests across desktop and mobile Chrome viewports against the production build.
+
 ### Test production build locally
 ```bash
 npm run build
-npx serve -s build
+node scripts/serve-test.js
 ```
+
 
 ## Architecture
 

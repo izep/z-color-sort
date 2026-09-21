@@ -4,7 +4,7 @@ A Progressive Web App (PWA) color sorting puzzle game built with React and TypeS
 
 ## 🎮 Play Now
 
-**Live Demo:** https://izep.github.io/color-sort
+**Live Demo:** https://izep.github.io/z-color-sort
 
 ## 📋 Table of Contents
 
@@ -555,7 +555,7 @@ color-sort/
 npm run deploy
 ```
 
-3. **Live URL**: https://izep.github.io/color-sort
+3. **Live URL**: https://izep.github.io/z-color-sort
 
 ### Alternative: Netlify
 
@@ -578,13 +578,13 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for complete deployment options.
 ## 📱 PWA Installation
 
 ### On Mobile (iOS/Android)
-1. Open https://izep.github.io/color-sort in your browser
+1. Open https://izep.github.io/z-color-sort in your browser
 2. Tap the "Share" or "Menu" button
 3. Select "Add to Home Screen"
 4. The app will appear as a standalone app icon
 
 ### On Desktop (Chrome/Edge)
-1. Open https://izep.github.io/color-sort in your browser
+1. Open https://izep.github.io/z-color-sort in your browser
 2. Look for the install icon in the address bar
 3. Click "Install"
 4. The app will open in its own window
@@ -656,4 +656,4 @@ All requirements, specifications, and implementation details are documented in t
 
 ---
 
-**Play now at: https://izep.github.io/color-sort 🎨**
+**Play now at: https://izep.github.io/z-color-sort 🎨**

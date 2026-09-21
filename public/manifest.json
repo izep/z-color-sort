@@ -1,7 +1,15 @@
 {
   "short_name": "Color Sort",
   "name": "Color Sort Puzzle Game",
-  "description": "A fun puzzle game where you sort colors into tubes",
+  "description": "A fun, relaxing color sorting puzzle game where you sort colors into glass tubes",
+  "id": "/z-color-sort/",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "theme_color": "#667eea",
+  "background_color": "#667eea",
+  "orientation": "any",
+  "categories": ["games", "puzzle"],
   "icons": [
     {
       "src": "favicon.ico",
@@ -11,17 +19,26 @@
     {
       "src": "logo192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
     },
     {
       "src": "logo512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#667eea",
-  "background_color": "#667eea",
-  "orientation": "portrait"
+  ]
 }

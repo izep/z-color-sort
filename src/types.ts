@@ -10,4 +10,8 @@ export interface GameState {
   moves: number;
   isWon: boolean;
   colorblindMode: boolean;
+  history?: Tube[][];
+  initialTubes?: Tube[];
+  level?: number;
+  soundEnabled?: boolean;
 }

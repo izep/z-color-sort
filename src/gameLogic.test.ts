@@ -5,6 +5,8 @@ import {
   pourColors, 
   checkWin, 
   isTubeComplete,
+  solvePuzzle,
+  findNextMove,
   COLORS
 } from './gameLogic';
 
@@ -169,4 +171,45 @@ describe('gameLogic', () => {
       expect(isTubeComplete(tube)).toBe(false);
     });
   });
+
+  describe('solvePuzzle and findNextMove', () => {
+    const red = COLORS[0];
+    const green = COLORS[1];
+
+    it('should return empty array if puzzle is already won', () => {
+      const tubes: Tube[] = [
+        { id: 0, colors: [red, red, red, red], maxCapacity: 4 },
+        { id: 1, colors: [green, green, green, green], maxCapacity: 4 },
+        { id: 2, colors: [], maxCapacity: 4 }
+      ];
+      expect(solvePuzzle(tubes)).toEqual([]);
+      expect(findNextMove(tubes)).toBeNull();
+    });
+
+    it('should solve a 1-move puzzle and find next move', () => {
+      const tubes: Tube[] = [
+        { id: 0, colors: [red, red, red], maxCapacity: 4 },
+        { id: 1, colors: [green, green, green, green], maxCapacity: 4 },
+        { id: 2, colors: [red], maxCapacity: 4 }
+      ];
+      const solution = solvePuzzle(tubes);
+      expect(solution).not.toBeNull();
+      expect(solution?.length).toBe(1);
+      // Either pouring 0 into 2 or 2 into 0 completes the red tube
+      const move = solution![0];
+      expect([0, 2]).toContain(move.from);
+      expect([0, 2]).toContain(move.to);
+
+      const hint = findNextMove(tubes);
+      expect(hint).toEqual(move);
+    });
+
+    it('should create initial game with history and initialTubes', () => {
+      const state = createInitialGame(4);
+      expect(state.history).toEqual([]);
+      expect(state.initialTubes).toBeDefined();
+      expect(state.initialTubes?.length).toBe(state.tubes.length);
+    });
+  });
 });
+

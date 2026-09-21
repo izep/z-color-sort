@@ -1,0 +1,113 @@
+.liquid-stream-container {
+  overflow: visible;
+}
+
+.liquid-stream-svg {
+  overflow: visible;
+}
+
+.stream-path-main {
+  animation: streamFlow 0.5s ease-in-out infinite;
+  stroke-dasharray: 120;
+  stroke-dashoffset: 0;
+}
+
+.stream-path-core {
+  animation: streamShine 0.5s ease-in-out infinite;
+}
+
+@keyframes streamFlow {
+  0% {
+    stroke-width: 6px;
+    opacity: 0.9;
+  }
+  50% {
+    stroke-width: 8px;
+    opacity: 1;
+  }
+  100% {
+    stroke-width: 6px;
+    opacity: 0.9;
+  }
+}
+
+@keyframes streamShine {
+  0% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+.splash-zone {
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.splash-ripple {
+  position: absolute;
+  left: -14px;
+  top: -4px;
+  width: 28px;
+  height: 8px;
+  border: 2px solid;
+  border-radius: 50%;
+  animation: ripplePulse 0.4s ease-out infinite;
+  opacity: 0.8;
+}
+
+@keyframes ripplePulse {
+  0% {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+.splash-droplet {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  animation: dropletFly 0.45s ease-out infinite;
+}
+
+.splash-droplet.d1 {
+  animation-delay: 0s;
+  --dx: -10px;
+  --dy: -12px;
+}
+
+.splash-droplet.d2 {
+  animation-delay: 0.15s;
+  --dx: 12px;
+  --dy: -10px;
+}
+
+.splash-droplet.d3 {
+  animation-delay: 0.28s;
+  --dx: 2px;
+  --dy: -16px;
+}
+
+@keyframes dropletFly {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(var(--dx), var(--dy)) scale(0.3);
+    opacity: 0;
+  }
+}

@@ -92,54 +92,124 @@
   gap: 15px;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 30px;
-  max-width: 800px;
+  margin-bottom: 25px;
+  max-width: 850px;
+}
+
+.game-stats {
+  font-size: 1.25rem;
+  margin-top: 10px;
+  font-weight: 600;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.stat-item {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.hint-banner {
+  background: rgba(255, 235, 59, 0.95);
+  color: #333;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  animation: fadeIn 0.3s ease-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .controls {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.action-controls,
+.settings-controls {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .controls button {
   background: white;
   border: none;
-  padding: 12px 30px;
+  padding: 10px 22px;
   border-radius: 25px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.2s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.controls button:hover {
+.controls button:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
-.controls button:active {
+.controls button:active:not(:disabled) {
   transform: translateY(0);
+}
+
+.controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.controls button.active {
+  background: #4CAF50;
+  color: white;
+}
+
+.controls button.primary {
+  background: #ffeb3b;
+  color: #222;
 }
 
 .difficulty-controls {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   align-items: center;
   color: white;
   font-weight: bold;
+  font-size: 0.95rem;
 }
 
 .difficulty-controls button {
-  padding: 8px 20px;
-  font-size: 0.9rem;
+  padding: 6px 16px;
+  font-size: 0.85rem;
 }
 
-.difficulty-controls button.active {
-  background: #4CAF50;
-  color: white;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 @media (max-width: 768px) {
@@ -153,11 +223,19 @@
 
   .controls {
     width: 100%;
-    padding: 0 20px;
+    padding: 0 10px;
+    gap: 12px;
   }
 
+  .action-controls,
+  .settings-controls,
   .difficulty-controls {
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .controls button {
+    padding: 8px 16px;
+    font-size: 0.85rem;
   }
 }
